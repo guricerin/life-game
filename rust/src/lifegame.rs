@@ -64,7 +64,7 @@ impl LifeGame {
         for line in self.field.iter() {
             let s = line
                 .iter()
-                .map(|row| if *row { 'o' } else { '.' })
+                .map(|cell| if *cell { 'o' } else { '.' })
                 .collect::<String>();
             buf = format!("{}{}\n", buf, s);
         }
