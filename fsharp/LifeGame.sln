@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29009.5
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "LifeGame", "LifeGame\LifeGame.fsproj", "{184975E7-E275-4AB4-BC6D-C582ECDAA98D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x64 = Debug|x64
+		Release|Any CPU = Release|Any CPU
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{184975E7-E275-4AB4-BC6D-C582ECDAA98D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{184975E7-E275-4AB4-BC6D-C582ECDAA98D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{184975E7-E275-4AB4-BC6D-C582ECDAA98D}.Debug|x64.ActiveCfg = Debug|x64
+		{184975E7-E275-4AB4-BC6D-C582ECDAA98D}.Debug|x64.Build.0 = Debug|x64
+		{184975E7-E275-4AB4-BC6D-C582ECDAA98D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{184975E7-E275-4AB4-BC6D-C582ECDAA98D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{184975E7-E275-4AB4-BC6D-C582ECDAA98D}.Release|x64.ActiveCfg = Release|x64
+		{184975E7-E275-4AB4-BC6D-C582ECDAA98D}.Release|x64.Build.0 = Release|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {33F68C4B-FC5A-4C75-90F5-717ED905C1FE}
+	EndGlobalSection
+EndGlobal
