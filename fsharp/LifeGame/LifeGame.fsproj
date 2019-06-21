@@ -5,7 +5,7 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>184975e7-e275-4ab4-bc6d-c582ecdaa98d</ProjectGuid>
+    <ProjectGuid>ef9d4a46-940f-459e-87cb-8a3558d1c271</ProjectGuid>
     <OutputType>Exe</OutputType>
     <RootNamespace>LifeGame</RootNamespace>
     <AssemblyName>LifeGame</AssemblyName>
