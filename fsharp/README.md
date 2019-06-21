@@ -1,5 +1,5 @@
 # F#
 
-## ŠJ”­ŠÂ‹«
+## é–‹ç™ºç’°å¢ƒ
 
 * Visual Studio 2019 community
