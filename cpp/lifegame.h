@@ -1,15 +1,15 @@
 ﻿#pragma once
 
 #include <iostream>
+#include <random>
 #include <string>
 #include <vector>
-#include <random>
 
-using std::vector;
 using std::string;
+using std::vector;
 
-constexpr int DY8[] = { -1, -1, -1, 0, 0, 1, 1, 1 };
-constexpr int DX8[] = { -1, 0, 1, -1, 1, -1, 0, 1 };
+constexpr int DY8[] = {-1, -1, -1, 0, 0, 1, 1, 1};
+constexpr int DX8[] = {-1, 0, 1, -1, 1, -1, 0, 1};
 
 class LifeGame {
     int height_;
@@ -38,37 +38,34 @@ class LifeGame {
     bool should_be_alive(const bool cell_state, const int neighbours) const {
         if (cell_state && neighbours == 2) {
             return true;
-        }
-        else if (neighbours == 3) {
+        } else if (neighbours == 3) {
             return true;
-        }
-        else {
+        } else {
             return false;
         }
     }
-    
+
 public:
     LifeGame(const int height, const int width)
-        : height_(height), width_(width)
-    {
+        : height_(height), width_(width) {
         field_.assign(height_, vector<bool>(width_, false));
     }
 
     void init_field() {
-        std::mt19937 mt{ std::random_device{}() };
+        std::mt19937 mt{std::random_device{}()};
         std::uniform_int_distribution<int> dist(0, 1);
 
         for (int y = 0; y < height_; y++) {
             for (int x = 0; x < width_; x++) {
                 const bool alive = static_cast<bool>(dist(mt));
-                field_[y][x] = alive;
+                field_[y][x]     = alive;
             }
         }
     }
 
     void dump() const {
         string buf = "";
-        for (const auto row: field_) {
+        for (const auto row : field_) {
             for (const auto cell : row) {
                 buf += (cell ? "o" : ".");
             }
@@ -83,11 +80,10 @@ public:
         for (int y = 0; y < height_; y++) {
             for (int x = 0; x < width_; x++) {
                 const auto neighbours = neighbours_count(y, x);
-                const auto alive = should_be_alive(field_[y][x], neighbours);
-                next.field_[y][x] = alive;
+                const auto alive      = should_be_alive(field_[y][x], neighbours);
+                next.field_[y][x]     = alive;
             }
         }
         return next;
     }
-
 };

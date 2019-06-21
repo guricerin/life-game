@@ -1,23 +1,23 @@
 ﻿#include "lifegame.h"
-#include <thread>
 #include <chrono>
 #include <cstdlib>
+#include <thread>
 
 void console_clear() {
-    std::system("cls");
+    printf("\033[;H\033[2J");
 }
 
 int main() {
-    constexpr int height = 30;
-    constexpr int width = 40;
-    auto lifegame = LifeGame(height, width);
+    constexpr int height = 40;
+    constexpr int width  = 80;
+    auto lifegame        = LifeGame(height, width);
     lifegame.init_field();
 
     while (true) {
-        //console_clear(); // 有効化したらチラつきがひどい
+        console_clear();
         lifegame.dump();
         lifegame = lifegame.next_field();
         std::this_thread::sleep_for(std::chrono::milliseconds(100));
     }
-	return 0;
+    return 0;
 }

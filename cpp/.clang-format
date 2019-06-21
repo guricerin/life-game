@@ -1,0 +1,27 @@
+---
+Language: Cpp
+BasedOnStyle: LLVM
+AlignTrailingComments: # 末尾のコメント文を整形
+  true
+IndentWidth: # インデント幅
+  4
+Standard: # C++バージョン(C++03以前 or C++11以降)
+  C++11
+AlignConsecutiveAssignments: # 連続する代入文の右辺を整形
+  true
+AlignConsecutiveDeclarations: # 連続する代入文左辺の変数名を整形
+  false
+ColumnLimit: # 1行の文字数制限。0なら制限なし
+  0
+AllowShortBlocksOnASingleLine: # 簡単なif文などをワンライナーで表示
+  true
+AllowShortFunctionsOnASingleLine: # 1行で表示できるものは改行しない
+  All
+AllowShortIfStatementsOnASingleLine: # 短い if 文を1行で表示
+  true
+AllowShortIfStatementsOnASingleLine: # 短い while 文を1行で表示
+  true
+NamespaceIndentation: # 他のnamespaceに内包されたnamespace内の要素のみインデント
+  Inner
+AccessModifierOffset: # アクセス修飾子とclassのインデントを合わせる
+  -4
