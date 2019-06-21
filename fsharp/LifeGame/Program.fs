@@ -38,7 +38,7 @@ let dump field (width: int, height: int) =
     let mutable buf = ""
     charField |> Array2D.iteri (fun y x cell -> 
         if x = width - 1 
-        then buf <- buf + cell.ToString() + "\r\n"
+        then buf <- buf + cell.ToString() + "\n"
         else buf <- buf + cell.ToString())
     printf("%s") buf
 
