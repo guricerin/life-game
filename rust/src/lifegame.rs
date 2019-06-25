@@ -1,27 +1,8 @@
 use rand::Rng;
-use std::{thread, time};
-
-pub fn run() {
-    let width = 100;
-    let height = 40;
-    let mut lifegame = LifeGame::new(width, height);
-    lifegame.init_field();
-
-    loop {
-        console_clear();
-        lifegame.dump();
-        lifegame = lifegame.next_field();
-        thread::sleep(time::Duration::from_millis(100));
-    }
-}
-
-fn console_clear() {
-    print!("{0}[;H{0}[2J", 27 as char);
-}
 
 type Field = Vec<Vec<bool>>;
 
-struct LifeGame {
+pub struct LifeGame {
     width: usize,
     height: usize,
     field: Field,
@@ -52,8 +33,9 @@ impl LifeGame {
         let mut next = LifeGame::new(self.width, self.height);
         for y in 0..self.height {
             for x in 0..self.width {
+                let cell_state = self.field[y][x];
                 let neighbours = self.alive_neighbors_count(y, x);
-                next.field[y][x] = self.should_be_alive(y, x, neighbours);
+                next.field[y][x] = self.should_be_alive(cell_state, neighbours);
             }
         }
         next
@@ -101,8 +83,8 @@ impl LifeGame {
         res
     }
 
-    fn should_be_alive(&self, y: usize, x: usize, neighbours: usize) -> bool {
-        match (self.field[y][x], neighbours) {
+    fn should_be_alive(&self, cell_state: bool, neighbours: usize) -> bool {
+        match (cell_state, neighbours) {
             (true, 2) => true,
             (_, 3) => true,
             (_, _) => false,
